@@ -1,0 +1,19 @@
+%icon {
+   aspect-ratio: 1 / 1;
+   color: inherit;
+}
+
+.regular-icon {
+   width: var(--base-icon-size);
+   @extend %icon;
+}
+
+.large-icon {
+   width: calc(var(--base-icon-size) * 1.5);
+   @extend %icon;
+}
+
+.x-large-icon {
+   width: calc(var(--base-icon-size) * 2.5);
+   @extend %icon;
+}

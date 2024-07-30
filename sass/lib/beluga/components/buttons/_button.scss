@@ -1,0 +1,103 @@
+@use 'sass:math';
+
+@mixin btn($bg-color: white, $color: inherit) {
+    padding: ($base-padding * .75) $base-padding;
+    background-color: $bg-color;
+    border-radius: $base-border-radius;
+    border: 0;
+    display: inline-block;
+    color: $color;
+    font-size: $base-font-size;
+    text-decoration: none;
+    transition: background-color .1s ease;
+}
+
+:where(.btn) {
+    @include btn;
+}
+
+@each $key, $val in $colors {
+
+    :where(.btn-#{$key}) {
+        @include btn($val);
+        &:hover {
+            background-color: lighten( $val, 10% );
+        }
+    }    
+
+    :where(.btn-outline-#{$key}) {
+        @include btn(transparent, $val);
+        border: $base-border-width solid $val;
+        &:hover {
+            background-color: $val;
+            color: inherit;
+        }
+    }    
+
+    // light and dark variations
+    @if ( $key != "white" ) {
+        // light
+        @for $i from 1 to 10 {
+            $lightVar: mix( white, $val , $i * 10% );
+            
+            :where(.btn-#{$key}-light-#{$i}) {
+                @include btn($lightVar);
+                &:hover {
+                    background-color: darken( $lightVar, 10% );
+                }
+            }    
+        
+            :where(.btn-outline-#{$key}-light-#{$i}) {
+                @include btn(transparent, $lightVar);
+                border: $base-border-width solid $lightVar;
+                &:hover {
+                    background-color: $lightVar;
+                    color: inherit;
+                }
+            }    
+        }
+    }
+    // dark
+    @if ( $key != "black" ) {
+        @for $i from 1 to 10 {
+            $darkVar: mix( black, $val , $i * 10% );
+            
+            :where(.btn-#{$key}-dark-#{$i}) {
+                @include btn($darkVar);
+                &:hover {
+                    background-color: lighten( $darkVar, 10% );
+                }
+            }    
+        
+            :where(.btn-outline-#{$key}-dark-#{$i}) {
+                @include btn(transparent, $darkVar);
+                border: $base-border-width solid $darkVar;
+                &:hover {
+                    background-color: $darkVar;
+                    color: inherit;
+                }   
+            }    
+        }
+    }
+
+    // transparent variations
+    @for $i from 1 to 10 {
+        $fadeVar: transparentize($val, math.div($i, 10));
+
+        :where(.btn-#{$key}-fade-#{$i}) {
+            @include btn($fadeVar);
+            &:hover {
+                background-color: lighten( $fadeVar, 10% );
+            }
+        }    
+    
+        :where(.btn-outline-#{$key}-fade-#{$i}) {
+            @include btn(transparent, $fadeVar);
+            border: $base-border-width solid $fadeVar;
+            &:hover {
+                background-color: $fadeVar;
+                color: inherit;
+            }
+        }   
+    }
+}

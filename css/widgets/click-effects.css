@@ -1,0 +1,30 @@
+.click-spread-circle {
+   overflow: clip;
+}
+
+.click-spread-circle__overlay {
+   --circle-left: 50%;
+   --circle-top: 50%;
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   pointer-events: none;
+}
+
+.click-spread-circle__overlay__circle {
+   position: absolute;
+   left: var(--circle-left);
+   top: var(--circle-top);
+
+   transform: translate(-50%, -50%) scale(.4);
+   transform-origin: 50%;
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   border-radius: 50%;
+   background-color: rgba(255, 255, 255, 0.15);
+   display: none;
+
+   pointer-events: none;
+}

@@ -1,0 +1,38 @@
+@use 'sass:math';
+
+:root {
+   --main-bg: rgb(3, 8, 15);
+   --l1-bg: rgba(148, 146, 255, 0.1);
+   --l2-bg: rgba(148, 146, 255, 0.4);
+   --l3-bg: rgba(148, 146, 255, 0.75);
+   --main-txt: #ddd;
+   --main-txt-50: #ddd8;
+   --main-txt-75: #ddda;
+   --active-txt: rgb(159, 189, 255);
+   --theme-color: ;
+   --base-blur: blur(8px);
+   --base-border: 1px solid rgb(49, 59, 105);
+   --base-box-shadow: 0 0 50px 0 rgba(159, 189, 255, 0.3);
+   --base-text-shadow: 0 0 30px rgba(159, 189, 255, 0.7);
+   --base-icon-size: 1rem;
+   --side-nav-item-radius: #{math.div($base-border-radius, 2)};
+   --side-nav-user-img-size: 40px;
+   
+   --mobile-inline-padding: 1rem;
+   --mobile-nav-bottom-offset: 1rem;
+   --mobile-nav-height: 60px;
+   --header-top-offset: 60px;
+   --navbar-bottom-offset: 60px;
+   --dock-nav-min-width: 80px;
+   --dock-nav-search-inp-btns-gap: 4px;
+   --dock-nav-search-inp-cancel-btn-width: 20px;
+   --dock-nav-search-inp-go-btn-width: 30px;
+   --dock-nav-search-inp-inline-padding: 20px;
+   --dock-nav-search-icon-width: 20px;
+   --dock-nav-lg-bg: rgba(21, 22, 31, .2);
+
+   --footer-padding: 1rem;
+
+   // --mobile-nav-btn-size: 2rem;
+
+}

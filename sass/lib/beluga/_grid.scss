@@ -1,0 +1,139 @@
+@use 'sass:math';
+
+$grid-cols-count: 12;
+$justify-values: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$align-values: flex-start, flex-end, center, stretch;
+$grid-gaps: (
+    "0": 0,
+    "1": $base-gap,
+    "2": $base-gap * 2,
+    "3": $base-gap * 4,
+    "4": $base-gap * 6,
+    "5": $base-gap * 8,
+);
+
+// variables
+$container-max-width: 1200px;
+@include xxl {
+    $container-max-width: 1400px;   
+}
+
+// grid utilities
+*:where(.d-grid) {
+    display: grid;
+}
+
+*:where(.d-grid.grid-col) {
+    grid-auto-flow: column;
+}
+
+*:where(.d-grid.grid-row) {
+    grid-auto-flow: row;
+}
+
+// container
+*:where(.container) {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+*:where(.row) {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// items
+@include xs {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-xs-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+@include sm {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-sm-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+@include md {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-md-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+
+@include lg {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-lg-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+@include xl {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-xl-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+@include xxl {
+    @for $i from 1 to $grid-cols-count + 1 {
+        *:where(.col-xxl-#{$i}) {
+            flex-grow: 0;
+            width: math.div(100%, $grid-cols-count) * $i;
+        }
+    }
+}
+
+// gap
+@each $key, $val in $grid-gaps {
+    *:where(.gap-#{$key} > *) {
+        padding: $val;
+
+        &:first-child {
+            padding-inline-start: 0;
+        }
+        &:last-child {
+            padding-inline-end: 0;
+        }
+    }
+    // *:where(.gap-#{$key}) {
+    //     margin-inline: -$val;
+    // }
+    *:where(.gap-x-#{$key} > *) {
+        padding-inline: $val;
+
+        &:first-child {
+            padding-inline-start: 0;
+        }
+        &:last-child {
+            padding-inline-end: 0;
+        }
+    }
+    *:where(.gap-y-#{$key} > *) {
+        padding-block: $val;
+    }
+}
+
+// justify & alignment
+@each $val in $justify-values {
+    *:where(.justify-#{$val}) {
+        justify-content: $val;
+    }
+}
+
+@each $val in $align-values {
+    *:where(.align-items-#{$val}) {
+        align-items: $val;
+    }
+}

@@ -1,0 +1,26 @@
+
+%divider {
+   position: relative;
+   height: 1px;
+   margin-right: 0 auto;
+   border: 0;
+   background-color: var(--l1-bg);
+}
+
+.divider-25 {
+   flex-basis: 25%;
+   flex-grow: 1;
+   width: 25%;
+   @extend %divider;
+}
+.divider-50 {
+   flex-basis: 50%;
+   flex-grow: 1;
+   width: 50%;
+   @extend %divider;
+}
+.divider-100 {
+   flex-grow: 1;
+   width: 100%;
+   @extend %divider;
+}

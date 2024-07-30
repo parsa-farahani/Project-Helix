@@ -1,0 +1,182 @@
+@use 'sass:math';
+// bg & text & border & shadows color-utilities
+
+@each $key, $val in $colors {
+
+    *:where(.bg-#{$key}) {
+        background-color: $val;
+    }
+
+    *:where(.text-#{$key}) {
+        color: $val;
+    }
+
+    *:where(.b-#{$key}) {
+        border-color: $val;
+    }
+
+    *:where(.shadow-#{$key}) {
+        box-shadow: $base-box-shadow $val;
+    }
+
+    // hover
+    *:where(.bg-hover-#{$key}) {
+        &:hover {
+            background-color: $val;
+        }
+    }
+
+    *:where(.text-hover-#{$key}) {
+        &:hover {
+            color: $val;
+        }
+    }
+
+    *:where(.b-hover-#{$key}) {
+        &:hover {
+            border-color: $val;
+        }
+    }
+
+    *:where(.shadow-hover-#{$key}) {
+        &:hover {
+            box-shadow: $base-box-shadow $val;
+        }
+    }
+
+    // light and dark variations
+    @if ( $key != "white" ) {
+        // light
+        @for $i from 1 to 10 {
+            $lightVar: mix( white, $val , $i * 10% );
+            *:where(.bg-#{$key}-light-#{$i}) {
+                background-color: $lightVar;
+            }
+
+            *:where(.text-#{$key}-light-#{$i}) {
+                color: $lightVar;
+            }
+
+            *:where(.b-#{$key}-light-#{$i}) {
+                border-color: $lightVar;
+            }
+
+            *:where(.shadow-#{$key}-light-#{$i}) {
+                box-shadow: $base-box-shadow $lightVar;
+            }
+
+            *:where(.bg-hover-#{$key}-light-#{$i}) {
+                &:hover {
+                    background-color: $lightVar;
+                }
+            }
+            
+            *:where(.text-hover-#{$key}-light-#{$i}) {
+                &:hover {
+                    color: $lightVar;
+                }
+            }
+
+            *:where(.b-hover-#{$key}-light-#{$i}) {
+                &:hover {
+                    border-color: $lightVar;
+                }
+            }
+
+            *:where(.shadow-hover-#{$key}-light-#{$i}) {
+                &:hover {
+                    box-shadow: $base-box-shadow $lightVar;
+                } 
+            }
+        }
+    }
+    // dark
+    @if ( $key != "black" ) {
+        @for $i from 1 to 10 {
+            $darkVar: mix( black, $val , $i * 10% );
+            *:where(.bg-#{$key}-dark-#{$i}) {
+                background-color: $darkVar;
+            }
+    
+            *:where(.text-#{$key}-dark-#{$i}) {
+                color: $darkVar;
+            }
+
+            *:where(.b-#{$key}-dark-#{$i}) {
+                border-color: $darkVar;
+            }
+
+            *:where(.shadow-#{$key}-dark-#{$i}) {
+                box-shadow: $base-box-shadow $darkVar;
+            }
+    
+            *:where(.bg-hover-#{$key}-dark-#{$i}) {
+                &:hover {
+                    background-color: $darkVar;
+                }
+            }
+            
+            *:where(.text-hover-#{$key}-dark-#{$i}) {
+                &:hover {
+                    color: $darkVar;
+                }
+            }
+
+            *:where(.b-hover-#{$key}-dark-#{$i}) {
+                &:hover {
+                    border-color: $darkVar;
+                }
+            }
+
+            *:where(.shadow-hover-#{$key}-dark-#{$i}) {
+                &:hover {
+                    box-shadow: $base-box-shadow $darkVar;
+                }
+            }
+        }
+    }
+
+    // transparent variations
+    @for $i from 1 to 10 {
+        $fadeVar: transparentize($val, math.div($i, 10));
+        *:where(.bg-#{$key}-fade-#{$i}) {
+            background-color: $fadeVar;
+        }
+
+        *:where(.bg-hover-#{$key}-fade-#{$i}) {
+            &:hover {
+                background-color: $fadeVar;
+            }
+        }
+
+        *:where(.text-#{$key}-fade-#{$i}) {
+            color: $fadeVar;
+        }
+
+        *:where(.text-hover-#{$key}-fade-#{$i}) {
+            &:hover {
+                color: $fadeVar;
+            }
+        }
+
+        *:where(.b-#{$key}-fade-#{$i}) {
+            border-color: $fadeVar;
+        }
+
+        *:where(.b-hover-#{$key}-fade-#{$i}) {
+            &:hover {
+                border-color: $fadeVar;
+            }
+        }
+
+        *:where(.shadow-#{$key}-fade-#{$i}) {
+            box-shadow: $base-box-shadow $fadeVar;
+        }
+
+        *:where(.shadow-hover-#{$key}-fade-#{$i}) {
+            &:hover {
+                box-shadow: $base-box-shadow $fadeVar;
+            }
+        }
+    }
+}

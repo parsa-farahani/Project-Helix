@@ -1,0 +1,74 @@
+// colors
+$white: #fff !default;
+$black: #000 !default;
+$slate: #64748b !default;
+$gray: #6b7280 !default;
+$zinc: #71717a !default;
+$neutral: #737373 !default;
+$stone: #78716c !default;
+$red: #ef4444 !default;
+$orange: #f97316 !default;
+$amber: #f59e0b !default;
+$yellow: #eab308 !default;
+$lime: #84cc16 !default;
+$green: #22c55e !default;
+$emerald: #10b981 !default;
+$teal: #14b8a6 !default;
+$cyan: #06b6d4 !default;
+$sky: #0ea5e9 !default;
+$blue: #3b82f6 !default;
+$indigo: #6366f1 !default;
+$violet: #8b5cf6 !default;
+$purple: #a855f7 !default;
+$fuchsia: #a855f7 !default;
+$pink: #ec4899 !default;
+$rose: #f43f5e !default;
+
+$colors: (
+    "white": $white,
+    "black": $black,
+    "slate": $slate,
+    "gray": $gray,
+    "zinc": $zinc,
+    "neutral": $neutral,
+    "stone": $stone,
+    "red": $red,
+    "orange": $orange,
+    "amber": $amber,
+    "yellow": $yellow,
+    "lime": $lime,
+    "green": $green,
+    "emerald": $emerald,
+    "teal": $teal,
+    "cyan": $cyan,
+    "sky": $sky,
+    "blue": $blue,
+    "indigo": $indigo,
+    "violet": $violet,
+    "purple": $purple,
+    "fuchsia": $fuchsia,
+    "pink": $pink,
+    "rose": $rose,
+);
+
+// spacing
+$base-margin: .75rem !default;
+$base-padding: .75rem !default;
+
+// font sizes
+$base-font-size: 1rem !default;
+
+// borders
+$base-border-width: 1px !default;
+
+// border-radius
+$base-border-radius: 10px !default;
+
+// box shadows
+$base-box-shadow: 0 .25em 1.5em !default;
+$small-box-shadow: 0 .15em 1em !default;
+$large-box-shadow: 0 .75em 2em !default;
+
+// layout
+$container-max-width: 1200px;
+$base-gap: 4px

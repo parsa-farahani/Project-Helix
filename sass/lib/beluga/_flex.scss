@@ -1,0 +1,14 @@
+$direction: row, column;
+$wrap: wrap, nowrap;
+
+@each $val in $direction {
+   .flex-#{$val} {
+      flex-direction: $val;
+   }
+}
+
+@each $val in $wrap {
+   .flex-#{$val} {
+      flex-direction: $val;
+   }
+}
