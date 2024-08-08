@@ -1,3 +1,1 @@
-* fixing main-bg(it is clipped in large screen sizes because of 'overfloh: hidden')
-
 * remaking the appearance of sticky-scroll-animation section items
