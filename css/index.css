@@ -1017,6 +1017,51 @@ body {
   --main-sec-next-btn-icon-color: rgb(133, 135, 255);
 }
 
+body {
+  position: relative;
+}
+
+.body__bgs, .body__bgs > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.body__bgs__nebula-bg {
+  filter: blur(30px);
+}
+
+.body__bgs__nebula-bg__n {
+  position: absolute;
+  width: min(100%, 200px);
+  height: 600px;
+}
+
+.body__bgs__nebula-bg__n1 {
+  right: 1px;
+  top: 15%;
+  background-image: radial-gradient(140px circle at 0% 60%, rgba(255, 105, 180, 0.7), 90%, transparent), linear-gradient(70deg, limegreen, rgb(25, 25, 187));
+  clip-path: url("#main-nebula-1");
+}
+
+.body__bgs__nebula-bg__n2 {
+  left: 1px;
+  top: 40%;
+  background-image: radial-gradient(140px circle at 0% 60%, rgba(255, 105, 180, 0.7), 90%, transparent), linear-gradient(70deg, limegreen, rgb(25, 25, 187));
+  clip-path: url("#main-nebula-2");
+}
+.body__bgs__nebula-bg__n3 {
+  width: min(100%, 140px);
+  height: 700px;
+  right: 1px;
+  top: 80%;
+  background-image: linear-gradient(70deg, gold, 30%, limegreen, 50%, rgb(25, 25, 187));
+  clip-path: url("#main-nebula-3");
+}
+
 .main {
   position: relative;
   height: auto;
@@ -1045,66 +1090,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.main__bgs__nebula-bg {
-  filter: blur(30px);
-}
-
-.main__bgs__nebula-bg__n {
-  position: absolute;
-  width: min(100%, 200px);
-  height: 600px;
-}
-
-.main__bgs__nebula-bg__n1 {
-  right: 1px;
-  top: 15%;
-  background-image: radial-gradient(140px circle at 0% 60%, rgba(255, 105, 180, 0.7), 90%, transparent), linear-gradient(70deg, limegreen, rgb(25, 25, 187));
-  clip-path: url("#main-nebula-1");
-}
-
-.main__bgs__nebula-bg__n2 {
-  left: 1px;
-  top: 40%;
-  background-image: radial-gradient(140px circle at 0% 60%, rgba(255, 105, 180, 0.7), 90%, transparent), linear-gradient(70deg, limegreen, rgb(25, 25, 187));
-  clip-path: url("#main-nebula-2");
-}
-@media screen and (min-width: 768px) {
-  .main__bgs__nebula-bg__n2 {
-    left: calc(1px - (var(--dock-nav-min-width) + 2 * var(--mobile-inline-padding)));
-  }
-}
-
-.main__bgs__nebula-bg__n3 {
-  width: min(100%, 140px);
-  height: 700px;
-  right: 1px;
-  top: 80%;
-  background-image: linear-gradient(70deg, gold, 30%, limegreen, 50%, rgb(25, 25, 187));
-  clip-path: url("#main-nebula-3");
-}
-.main__section__next-btn {
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  transform: translate(-50%, 0);
-  width: var(--main-sec-next-btn-size);
-  height: var(--main-sec-next-btn-size);
-  padding: 0.5rem;
-  background-color: var(--main-bg);
-  border-radius: 50%;
-  border: var(--base-border);
-  box-shadow: var(--base-box-shadow);
-  display: inline-block;
-}
-
-.main__section__next-btn__icon {
-  color: var(--l1-bg);
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  color: var(--main-sec-next-btn-icon-color);
 }
 
 .intro {
@@ -1741,6 +1726,7 @@ section:has(.dynamic-layout__title-cont__title).active .dynamic-layout__title-co
 
 .points__bgs {
   overflow: clip;
+  mask-image: linear-gradient(0deg, transparent, 10%, black, 90%, transparent);
 }
 .points__bgs, .points__bgs > * {
   position: absolute;
@@ -2268,6 +2254,7 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
 
 .process__bgs {
   overflow: clip;
+  mask-image: linear-gradient(0deg, transparent, 5%, black, 95%, transparent);
 }
 .process__bgs, .process__bgs > * {
   position: absolute;
@@ -2686,6 +2673,12 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
   padding-top: 1rem;
   text-align: left;
   color: var(--active-txt);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
 }
 
 :root {
