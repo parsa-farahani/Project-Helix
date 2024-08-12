@@ -57,7 +57,6 @@ document.addEventListener('click', e => {
          }
       })
    }
-   console.log(target)
    if (target.closest('.process__slideshow-cont__inner__item__animated-1__btn')) {
       console.log('a')
       document.querySelector('.process__slideshow-cont__inner__item__animated-1').classList.toggle('dark');
