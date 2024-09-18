@@ -2,7 +2,7 @@
 
 ## Preview
 
-
+[![Project Helix Preview](assets/screenshots/sc-1.png)]()
 
 ## Overview
 
