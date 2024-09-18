@@ -72,7 +72,7 @@ mobileWrapper.animate(
    },
    {
       duration: 500,
-      fill: "forwards",
+      fill: "both",
       easing: 'ease',
       timeline: new ViewTimeline(
          {
@@ -80,7 +80,7 @@ mobileWrapper.animate(
          }
       ),
       rangeStart: {rangeName: 'entry', offset: CSS.percent(10)},
-      rangeEnd: {rangeName: 'entry', offset: CSS.percent(80)},
+      rangeEnd: {rangeName: 'entry', offset: CSS.percent(150)},
    }
 )
 

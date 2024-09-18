@@ -1338,7 +1338,6 @@ body {
   position: relative;
   grid-row: 3/6;
   width: 100%;
-  overflow: clip;
   height: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -1363,15 +1362,20 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg);
+  transform: translate(-50%, -50%) rotateY(45deg) rotateX(20deg);
   width: var(--side-size);
   height: var(--side-size);
   perspective: 7000px;
   transform-style: preserve-3d;
   transition: perspective-origin 1s ease;
-  animation: rotateY360 20s forwards infinite linear;
+  animation: cube-bounce 10s forwards infinite linear;
 }
 
+@keyframes cube-bounce {
+  50% {
+    transform: translate(-50%, -50%) rotateY(45deg) rotateX(20deg) translateY(-50px);
+  }
+}
 @keyframes rotateY360 {
   30% {
     transform: translate(-50%, -50%) rotateY(300deg) rotateX(-40deg);
@@ -1395,57 +1399,21 @@ body {
 .intro__cube-cont__cube-side-1 {
   transform: translate(-50%, -50%) rotate(0deg) translateZ(calc(-1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-1 {
-    animation: bounce-side-1 10s forwards infinite;
-  }
-}
-
 .intro__cube-cont__cube-side-2 {
   transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc(-1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-2 {
-    animation: bounce-side-2 10s forwards infinite;
-  }
-}
-
 .intro__cube-cont__cube-side-3 {
   transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc(1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-3 {
-    animation: bounce-side-3 10s forwards infinite;
-  }
-}
-
 .intro__cube-cont__cube-side-4 {
   transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc(1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-4 {
-    animation: bounce-side-4 10s forwards infinite;
-  }
-}
-
 .intro__cube-cont__cube-side-5 {
   transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc(-1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-5 {
-    animation: bounce-side-5 10s forwards infinite;
-  }
-}
-
 .intro__cube-cont__cube-side-6 {
   transform: translate(-50%, -50%) rotate(0deg) translateZ(calc(1 * var(--side-size) / 2));
 }
-@media screen and (min-width: 768px) {
-  .intro__cube-cont__cube-side-6 {
-    animation: bounce-side-6 10s forwards infinite;
-  }
-}
-
 @keyframes bounce-side-1 {
   45%, 55% {
     transform: translate(-50%, -50%) rotate(0deg) translateZ(calc(-1 * var(--side-size) / 2 - 40px));
@@ -1990,6 +1958,7 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
   height: clamp(400px, 50cqi, 90%);
   aspect-ratio: 3/6;
   transition: all 0.5s ease;
+  animation: cube-bounce 10s forwards infinite linear;
 }
 @media screen and (min-width: 768px) {
   .mobile-layout__device-cont__mobile-wrapper {
@@ -2385,7 +2354,7 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
   height: 40%;
   border-radius: 10px;
   border: 4px solid var(--txt);
-  border: 4px solid orange;
+  border: 2px solid rgb(80, 106, 223);
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -2396,7 +2365,7 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
   width: 100%;
   height: 4px;
   background-color: var(--txt);
-  background-color: orange;
+  background-color: rgb(80, 106, 223);
   mix-blend-mode: exclusion;
   margin-bottom: 4px;
 }
@@ -2423,7 +2392,7 @@ section:has(.mobile-layout__title-cont__title).active .mobile-layout__title-cont
   background-color: var(--txt);
   border: var(--base-border);
   color: var(--bg);
-  color: orange;
+  color: rgb(80, 106, 223);
   font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {

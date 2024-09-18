@@ -1,30 +1,56 @@
-**Note: 
-in this project, I also used 'Beluga',
-my small CSS-library which I've created it using 'SASS(SCSS)'
-* Extra 'Beluga' styles(which are not used by markup), will be purged using 'purgeCSS' library
-* Also you can override the variabels of 'Beluga', by initializing them before: @import 'sass_lib_name'
+# Project Helix
 
-** Widgets:
-* js: prebuilt 'widgets' which are created as 'class', are imported (using ES6 Modules) to one file: 'js/widgets.js', and this file can be linked to each page which we need to use the widgets inside that.
-* css: css file of widgets is: 'css/widgets.css' which all .css files of prebuilt widgets are imported inside it by '@import', so we can link this file in any page which we need widgets there.'
+## Preview
 
-** This project is designed and made completely by myself, using pure: HTML, CSS(SASS), Javascript,  without even 1 line of Tailwind, Bootstrap, ... (all of transforms, 3d stuff/animations, sticky-scrollbased-animation(which is made by a widget which i made earlier and added to this project), ...)
 
-** This project is 'responsive' for mobiles, tablets, desktops, and larger screens
 
-** I've tried my best to keep the project 'Accessible', of course no one can do it 100%, but I've tried to make this project Accessible for all people
+## Overview
 
-** used technologies:
-HTML semantic elements
-HTML Accessibility attributes
-SVG
-SVG filters(grain filter for section '#intro')
-CSS clip-path
-CSS mask-*
-CSS Grid, flex, columns (section '#latest-projects' layout)
-CSS transform(2d/3d): (section '#intro' (cube), section '#dynamic-layout', section '#process' (sticy-scrollbased-animation))
-CSS Animations: (section '#intro' (title typing-effect, cube), section '#dynamic-layout', )
-Web Animation API: ( section '#mobile-layout', slider-progress, section '#process' (sticky-scrollbased-animation))
-IntersectionObserver: (sections, section '#latest-projects' appearance, ..)
-ViewTimeline API: (section '#mobile-layout' animation-timeline, section '#process' - for its 'sticky-scrollbased-animation' (design studio introduction),  )
-and also 'Javascript' to overal site handling (Events, setting animations, ...)
+Project Helix is a modern landing page designed to showcase advanced frontend development techniques. This project leverages CSS animations, the Web Animation API, Intersection Observer, and ViewTimeline to create a responsive and visually engaging user experience across all devices. The implementation is achieved using pure HTML, Sass, CSS, and JavaScript, without reliance on frameworks like Tailwind or Bootstrap.
+
+## Key Features
+
+- **Responsive Design**: Optimized for mobile, tablet, desktop, and larger screens.
+  
+- **Accessibility**: Efforts have been made to ensure the project is accessible to all users, adhering to best practices in semantic HTML and accessibility attributes.
+
+- **Custom CSS Library**: Utilizes 'Beluga', a custom CSS library built with Sass (SCSS). Unused styles are purged using the PurgeCSS library. Variables can be overridden by initializing them before importing the library.
+
+- **Widgets**: Includes pre-built JavaScript widgets imported as ES6 modules in `js/widgets.js` and corresponding styles in `css/widgets.css`. This modular approach allows for easy integration across different pages.
+
+## Technologies Used
+
+- **Languages**:
+  - HTML: For semantic and accessible markup.
+  - Sass: For advanced styling capabilities.
+  - JavaScript: For interactivity and animation controls.
+
+- **Tools**:
+  - Gulp: For compiling Sass files.
+
+- **APIs**:
+  - Web Animation API
+  - Intersection Observer API
+  - ViewTimeline API
+
+## Technical Skills Demonstrated
+
+- **HTML & Accessibility**: Implementation of semantic elements and accessibility attributes to enhance user experience.
+  
+- **CSS Techniques**:
+  - CSS Grid and Flexbox for layout management.
+  - Advanced animations using CSS transforms (2D/3D).
+  - CSS clip-path and mask properties for creative visual effects.
+
+- **JavaScript Functionality**:
+  - Event handling for user interactions.
+  - Animation control using the Web Animation API.
+  - Element visibility tracking with the Intersection Observer API.
+
+## Usage Instructions
+
+To view the project, open `index.html` on a local server. You can also deploy it on platforms like GitHub Pages for a live demo.
+
+## Contact Information
+
+For inquiries or feedback, please reach out via email at [aiparsa83@gmail.com](mailto:aiparsa83@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/parsa-farahani-935195293).
